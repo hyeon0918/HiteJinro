@@ -19,7 +19,7 @@ a { color: #333; text-decoration: none; }
 
 
 section.banner {display: none; }
-#container { display: none; }
+#container { display: block; }
 #footer { display: none; }
 
 
