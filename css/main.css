@@ -18,8 +18,8 @@ a { color: #333; text-decoration: none; }
       .header_inner { position: relative; width: 1328px; height: 120px; margin: 0 auto; }
 
 
-section.banner {display: none; }
-#container { display: none; }
+section.banner {display: block; }
+#container { display: block; }
 #footer { display: none; }
 
 
