@@ -20,9 +20,10 @@ a { color: #333; text-decoration: none; }
 
 section.banner {display: none; }
 #container { display: none; }
-#footer { display: none; }
+#footer { display: none;  background: #fff ; }
 
-
+/* 은아바보 */
+/* 깃허브 짱 어려워 */
 
 
 
