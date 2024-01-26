@@ -30,10 +30,20 @@ section.banner { z-index: 30; position: relative; width: 100%; height: 1020px; b
    .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; }
    .company_inner>.company_bg .cBg_backBg {width: 100%; }
 
+   .company_inner>.company_bg{width:100%;height:100%;padding:10px;}
+   .company_inner>.company_bg .cBg_inner {width:860px; height:auto; overflow: hidden; margin:0 auto;}
+   .company_inner>.company_bg .cBg_wrap {padding:30px;transform: scale(1.2);box-sizing:border-box; }
+   .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; }
+   .company_inner>.company_bg .cBg_backBg {width: 100%; }
+
+   .company_inner>.company_bg{width:100%;height:100%;padding:10px;}
+   .company_inner>.company_bg .cBg_inner {width:860px; height:auto; overflow: hidden; margin:0 auto;}
+   .company_inner>.company_bg .cBg_wrap {padding:30px;transform: scale(1.2);box-sizing:border-box; }
+   .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; }
+   .company_inner>.company_bg .cBg_backBg {width: 100%; }
+
 #footer { display: none; }
 #footer { display: block; }
-
-
 
 /* header */
 h1.logo { position: absolute; left: 0; top: 54px; }
