@@ -42,3 +42,19 @@ for (let i = 0; i < gnbMenu.length; i++) {
       });
    })(i);
 }
+
+// content1_company 물방울 배경이 마우스따라 움직이기
+$('.cBg_inner').on("mousemove", function(e) {
+   const width = $(window).width();
+   const height = $(window).height();
+ 
+   const moveX = (e.pageX - width / 2) / width;
+   const moveY = (e.pageY - height / 2) / height;
+ 
+   const backMoveX = -moveX * 30;
+   const backMoveY = -moveY * 30;
+ 
+   $('.cBg_bg_back').css({
+     transform: `translate(${backMoveX}px, ${backMoveY}px)`
+   });
+ });
