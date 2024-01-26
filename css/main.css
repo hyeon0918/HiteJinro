@@ -31,6 +31,7 @@ section.banner { z-index: 30; position: relative; width: 100%; height: 1020px; b
    .company_inner>.company_bg .cBg_backBg {width: 100%; }
 
 #footer { display: none; }
+#footer { display: block; }
 
 
 
