@@ -21,14 +21,14 @@ section.banner { z-index: 30; position: relative; width: 100%; height: 1020px; b
 
 #container { width: 100%;height: 100%; }
    .content1_company {width:100%;height:100%;background-color: #0096d6;}
-   .conpany_inner {width:1210px;height:1460px;padding-top:189px;box-sizing:border-box;}
-   .conpany_inner>p{width:100%;height:112px;font-size:24px;font-weight:700px;line-height:50px;text-align:center;margin-bottom:50px;}
+   .company_inner {width:1210px;height:1460px;padding-top:189px;box-sizing:border-box;margin:0 auto;}
+   .company_inner>p{width:100%;height:112px;font-size:24px;font-weight:700px;line-height:50px;text-align:center;margin-bottom:50px;}
 
    .company_inner>.company_bg{width:100%;height:100%;padding:10px;}
-   .cBg_inner {width:900px;height:auto;overflow:hidden;margin:0 auto;}
-   .cBg_wrap { transform: scale(1.2); }
-   .cBg_bg_back { transition: .1s ease-out; }
-   .cBg_backBg { width: 100%; }
+   .company_inner>.company_bg .cBg_inner {width:860px; height:auto; overflow: hidden; margin:0 auto;}
+   .company_inner>.company_bg .cBg_wrap {padding:30px;transform: scale(1.2);box-sizing:border-box; }
+   .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; }
+   .company_inner>.company_bg .cBg_backBg {width: 100%; }
 
 #footer { display: none; }
 
