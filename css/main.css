@@ -17,6 +17,7 @@ a { color: #333; text-decoration: none; }
    .header_wrap.on { height: 480px; background: #eee; }
       .header_inner { position: relative; width: 1328px; height: 120px; margin: 0 auto; }
 
+section.banner { z-index: 30; position: absolute; top: 0;  left: 50%; transform: translate(-50%); width: 1920px; margin: 0 auto; height: 1020px; }
 
 section.banner {display: none; }
 #container { display: block; }
@@ -33,16 +34,6 @@ section.banner {display: none; }
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* header */
 h1.logo { position: absolute; left: 0; top: 54px; }
 h1.logo > a { display: block; width: 180px; height: 48px; text-indent: -9999px; overflow: hidden;
@@ -53,7 +44,7 @@ h1.logo > a { display: block; width: 180px; height: 48px; text-indent: -9999px; 
 /* 탑메뉴 */
 dl.topMenu { display: flex; justify-content: flex-end; letter-spacing: 0; }
 dl.topMenu > dd { margin-top: 10px; padding: 3px 20px 10px; }
-dl.topMenu > dd a { color: #fff; font-size: 14px; font-family: Hamony_M; }
+dl.topMenu > dd a { color: #fff; font-size: 14px; font-family: Harmony_M; }
 
 dl.topMenu > dd:nth-of-type(3) > a { color: #0096db; }
 /* header_wrap:hover */
@@ -83,14 +74,14 @@ nav.gnb > ul { width: 100%; display: flex; justify-content: center; }
 
 /* gnbMenu */
 nav.gnb > ul > li { position: relative; padding: 0 50px; }
-nav.gnb > ul > li > a { position: relative; display: block; font-size: 18px; margin-top: 36px; line-height: 40px; color: #fff; font-family: Hamony_M; }
+nav.gnb > ul > li > a { position: relative; display: block; font-size: 18px; margin-top: 36px; line-height: 40px; color: #fff; font-family: Harmony_M; }
 /* header_wrap:hover */
 /* .header_wrap:hover  */
 nav.gnb > ul > li:hover > a::after { display: block; content: ""; clear: both; 
    position: absolute; left: 0; bottom: -4px; width: 100%; height: 2px; background: #061641; }
 .header_wrap:hover nav.gnb > ul > li > a { color: #153E8E; }
 
-nav.gnb > ul > li > ul > a { color: #010611; font-family: Hamony_S; font-size: 14px; }
+nav.gnb > ul > li > ul > a { color: #010611; font-family: Harmony_S; font-size: 14px; }
 
 /* subMenu */
 /* 공통 메뉴 */
@@ -100,15 +91,15 @@ nav.gnb > ul > li > ul > a { color: #010611; font-family: Hamony_S; font-size: 1
    padding-top: 50px; line-height: 34px; font-size: 14px; }
 .gnb_wrap > li > ul.block { opacity: 1; visibility: visible; }
 
-.gnb_wrap > li > ul > li { width: 180px; color: #061641; font-family: Hamony_M; font-size: 16px; text-align: center; }
-.gnb_wrap > li > ul > li > ul a { color: #010611; font-family: Hamony_S; font-size: 14px; }
+.gnb_wrap > li > ul > li { width: 180px; color: #061641; font-family: Harmony_M; font-size: 16px; text-align: center; }
+.gnb_wrap > li > ul > li > ul a { color: #010611; font-family: Harmony_S; font-size: 14px; }
 
 .gnb_wrap > li > ul > li > ul li { transition: background ease 0.1s;}
 .gnb_wrap > li > ul > li > ul li:hover { background: #153E8E; cursor: pointer } 
 .gnb_wrap > li > ul > li > ul li:hover a { color: #fff; } 
 
 /* gnb_two width 값 따로 지정 */
-.gnb_two > ul > li:first-child { width: 320px; color: #061641; font-family: Hamony_M; font-size: 16px; text-align: start; }
+.gnb_two > ul > li:first-child { width: 320px; color: #061641; font-family: Harmony_M; font-size: 16px; text-align: start; }
 
 /* 각각 지정 */
 .gnb_one > ul { left: -380px; } 
@@ -117,7 +108,24 @@ nav.gnb > ul > li > ul > a { color: #010611; font-family: Hamony_S; font-size: 1
 .gnb_four > ul { gap: 120px; left: -952px; } 
 
 
+/* banner */
+div.banner_frame { width: 100%; position: relative; left: 0; height: 100%; }
+.banner_frame > section { width: 100%; height: 100%; background-size: cover }
 
+/* 배경이미지 지정 */
+.banner_frame > section:nth-of-type(1) { background: url(../images/main_01.jpg) no-repeat 0 0; } /* kelly */
+
+/* div 내부 content */
+.banner_frame > section > div { position: relative; margin-left: auto; padding-top: 270px; width: 960px; height: 800px; box-sizing: border-box }
+.banner_frame > section > div > p { color: #fff; text-align: center; font-family: Harmony_M; font-size: 44px; line-height: 130px; }
+/* 로고이미지 */
+.banner_frame > section > div > ul > li:nth-of-type(1) { width: 544px; height: 260px; text-indent: -9999px; overflow: hidden; margin: 0 auto; margin-top: 70px;
+   background: url(../images/logo_kelly_y.png) no-repeat 0 0; background-size: contain; } 
+
+.banner_frame > section > div > ul > li:nth-of-type(2) { padding: 0 369px; margin-top: 70px;  text-align: center; color: #fff; }
+.banner_frame > section > div > ul > li:nth-of-type(2) > a { width: 158px; height: 48px; color: #fff; font-size: 20px; font-family: Harmony_M;
+   display: flex; padding: 10px 32px; justify-content: center; align-items: center; gap: 14px; border-radius: 20px; border: 1px solid #fff; }
+.banner_frame > section > div > ul > li:nth-of-type(2) > a > img { width: 48px; }
 
 
 
