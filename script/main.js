@@ -51,7 +51,7 @@ $('.cBg_inner').on("mousemove", function(e) {
    const moveX = (e.pageX - width / 2) / width;
    const moveY = (e.pageY - height / 2) / height;
 
-   const backMoveX = -moveX * 30;
+   const backMoveX = -moveX * 20;
    const backMoveY = -moveY * 10;
 
    $('.cBg_bg_back').css({
