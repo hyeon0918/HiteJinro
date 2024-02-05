@@ -12,6 +12,7 @@ topMenuDD[3].addEventListener("click", e => {
    };
 });
 
+
 // 주메뉴
 const headerWrap = document.querySelector(".header_wrap");
 const gnbMenu = document.querySelectorAll("nav.gnb > ul > li"); // gnb 메뉴
@@ -41,7 +42,7 @@ for (let i = 0; i < gnbMenu.length; i++) {
          topMenuDD[3].classList.remove("on");
       });
    })(i);
-}
+};
 
 // content1_company 물방울 배경이 마우스따라 움직이기
 $('.cBg_inner').on("mousemove", function(e) {
@@ -58,3 +59,46 @@ $('.cBg_inner').on("mousemove", function(e) {
       transform: `translate(${backMoveX}px, ${backMoveY}px)`
    });
 });
+
+// footer
+// siteMap
+const comMap = document.querySelectorAll(".footer_company > div > ul > li > div.min_map");
+const footerMap = document.querySelectorAll(".site_map > li > ul > li > div.min_map");
+
+function siteMap(name) {
+   name.forEach(item => {
+      // mouseover
+      item.addEventListener("mouseover", e => {
+         e.preventDefault();
+   
+         item.children[1].classList.add("on");
+      });
+      // mouseout
+      item.addEventListener("mouseout", e => {
+         e.preventDefault();
+   
+         item.children[1].classList.remove("on");
+      });
+   });
+};
+siteMap(comMap);
+siteMap(footerMap);
+
+// dl_toggle
+const mapToggle = document.querySelectorAll(".footer_inner > dl > dd.map_toggle");
+const minToggle = document.querySelectorAll(".footer_inner > dl > dd.map_toggle > ul")
+
+mapToggle.forEach(item => {
+   item.addEventListener("click", e => {
+      e.preventDefault();
+      item.classList.toggle("on");
+      item.children[1].classList.toggle("on");
+
+      if(e.currentTarget.classList.contains("on")) {
+         item.children[0].setAttribute("title", "닫기");
+      } else {
+         item.children[0].setAttribute("title", "열기");
+      };
+   });
+});
+

@@ -1,5 +1,6 @@
 @import url(reset.css);
 @import url(common.css);
+@import url(footer.css);
 
 body { background: #fff;color: #061641; font-size: 16px; font-family:'Harmony_L','Harmony_M','Harmony_B','NanumBarunGothic', "나눔바른고딕", "나눔고딕", 'NanumGothic', sans-serif; }
 a { color: #061641; text-decoration: none; }
@@ -67,8 +68,8 @@ dl.topMenu > dd:nth-of-type(4) > a { padding-right: 30px; background: url(../ima
 dl.topMenu > dd:nth-of-type(4) > ul { display: none; } 
 dl.topMenu > dd:nth-of-type(4).on > ul { display: block; position: absolute; left: 0; top: 30px; width: 140px; height: 116px; border-top: 2px solid #061641;
    padding: 5px 0 5px 0; box-sizing: border-box; font-size: 14px; background: #eee; }
-dl.topMenu > dd:nth-of-type(4) > ul li { padding-left: 40px; line-height: 34px; } 
-dl.topMenu > dd:nth-of-type(4) > ul li:hover { background: rgba(0, 150, 214, 0.2); } 
+dl.topMenu > dd:nth-of-type(4).on > ul li { padding-left: 40px; line-height: 34px; } 
+dl.topMenu > dd:nth-of-type(4).on > ul li:hover { background: rgba(0, 150, 214, 0.2); } 
 
 
 /* 주메뉴 */
