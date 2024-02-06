@@ -1,6 +1,5 @@
 @import url(reset.css);
 @import url(common.css);
-@import url(footer.css);
 
 body { background: #fff;color: #061641; font-size: 16px; font-family:'Harmony_L','Harmony_M','Harmony_B','NanumBarunGothic', "나눔바른고딕", "나눔고딕", 'NanumGothic', sans-serif; }
 a { color: #061641; text-decoration: none; }
@@ -17,25 +16,19 @@ a { color: #061641; text-decoration: none; }
    .header_wrap.on { height: 480px; background: #eee; }
       .header_inner { position: relative; width: 1328px; height: 120px; margin: 0 auto; }
 
-section.banner { z-index: 30; position: relative; width: 100%; height: 1020px; background: #061641; }
+section.banner { z-index: 30; position: relative; width: 100%; height: 50vw; background: url(../images/main_01.jpg) no-repeat 50% 50%/cover;}
 
 #container { width: 100%;height: 100%; }
    .content1_company {width:100%;height:100%;}
-   .company_inner {width:1210px;height:1510px;padding-top:189px;box-sizing:border-box;margin:0 auto;}
-   .company_inner>p{width:100%;height:112px;font-size:34px;font-weight:bold;line-height:80px;text-align:center;margin-bottom:50px;}
+      .company_inner {width:1210px;height:1510px;padding-top:120px;box-sizing:border-box;margin:0 auto;font-family:NanumBarunGothic;}
 
-   .company_inner>.company_bg{position:relative;width:100%;padding:10px;}
-   .company_inner>.company_bg .cBg_inner {width:800px; height:auto; overflow: hidden; margin:0 auto;}
-   .company_inner>.company_bg .cBg_wrap {padding:40px 0 40px;box-sizing:border-box; }
-   /* .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; } */
-   .company_inner>.company_bg .cBg_backBg {width: 100%; }
-   .company_inner>.company_bg>img{position:absolute;top:40%;left:50%;transform:translate(-40%,-30%);width:800px;}
+   .content2_brand { display: none; }
+   .content3_news { display: none; }
+   .content4_social { display: none; }
+   .content5_popular { display: none; }
 
-   .company_inner>ul{display:flex;flex-flow:row nowrap;justify-content:space-evenly;align-items:center;text-align:center;}
-   .company_inner>ul>li{width:171px;}
-   .company_inner>ul>li>img{height:224px;}
-   .company_inner>ul>li>p{text-align:center;font-size:30px;line-height:60px;white-space:nowrap;}
-#footer { display: none; }
+#footer { position: relative; width: 100%;; height: 540px; background: #061641; color: #fff; text-align: center; letter-spacing: 1px; }
+   .footer_inner { width: 1328px; margin: 0 auto; padding-top: 40px; }
 
 
 /* header */
@@ -113,13 +106,11 @@ nav.gnb > ul > li > ul > a { color: #010611; font-family: Harmony_S; font-size: 
 .gnb_five > ul { gap: 80px; left: -1120px; } 
 
 /* banner */
-div.banner_frame { width: 100%; left: 0; height: 100%; }
-.banner_frame > section { width: 100%; height: 100%; 
-   background: url(../images/main_01.jpg) no-repeat 0 0/contain; }
-
+div.banner_frame { width: 100%; left: 0; height: 100%; margin: 0 auto; }
+.banner_frame > section { width: 100%; height: 100%;}
 
 /* div 내부 content */
-.banner_frame > section > div { position: relative; margin-left: auto; padding-top: 270px; width: 960px; height: 800px; box-sizing: border-box }
+.banner_frame > section > div { position: relative; left: 46%; padding-top: 270px; width: 960px; height: 800px; box-sizing: border-box }
 .banner_frame > section > div > p { color: #fff; text-align: center; font-family: Harmony_M; font-size: 44px; line-height: 130px; }
 /* 로고이미지 */
 .banner_frame > section > div > ul > li:nth-of-type(1) { width: 544px; height: 260px; text-indent: -9999px; overflow: hidden; margin: 0 auto; margin-top: 70px;
@@ -130,6 +121,80 @@ div.banner_frame { width: 100%; left: 0; height: 100%; }
    display: flex; padding: 10px 32px; justify-content: center; align-items: center; gap: 14px; border-radius: 20px; border: 1px solid #fff; }
 .banner_frame > section > div > ul > li:nth-of-type(2) > a > img { width: 48px; }
 
+/* content1_company */
+.company_inner>p{width:100%;height:100px;font-size:24px;font-weight:500;line-height:50px;text-align:center;}
+
+.company_inner>.company_bg{position:relative;width:100%;padding:10px;}
+.company_inner>.company_bg .cBg_inner {width:800px; height:auto; overflow: hidden; margin:0 auto;}
+.company_inner>.company_bg .cBg_wrap {padding:40px 0 40px;box-sizing:border-box; }
+/* .company_inner>.company_bg .cBg_bg_back { transition: .1s ease-out; } */
+.company_inner>.company_bg .cBg_backBg {width: 100%; }
+.company_inner>.company_bg>img{position:absolute;top:40%;left:50%;transform:translate(-40%,-30%);width:800px;}
+
+.company_inner>ul{display:flex;flex-flow:row nowrap;justify-content:space-between;;align-items:center;text-align:center;}
+.company_inner>ul>li{width:171px;}
+.company_inner>ul>li>img{height:180px;}
+.company_inner>ul>li>p{text-align:center;font-size:20px;line-height:60px;white-space:nowrap;}
 
 
+/* footer */
+.footer_inner a { display: block; color: #fff; }
+.footer_inner > ul.site_map { display: flex; justify-content: center; }
+.site_map > li { flex: 1; font-size: 14px; font-family: Harmony_M; line-height: 30px; }
+.site_map > li > a { display: block; padding-bottom: 30px; }
+
+.site_map > li > ul > li { position: relative; font-family: Harmony_L; font-size: 12px; line-height: 30px; }
+.site_map > li > ul > li > a { display: inline-block; padding: 0 10px; box-sizing: border-box; }
+.site_map > li > ul > li > div > a { display: inline-block; padding: 0 10px; box-sizing: border-box; }
+
+/* a태그에 hover 했을 때 */
+.site_map > li > ul > li > div > ul { display: none; }
+.site_map > li > ul > li > div > ul.on { display: block; z-index: 20; position: absolute; right: -110px; top: 0; width: 180px; background: #0a246b; }
+.site_map > li > ul > li > div > ul.on > li { font-family: Harmony_L; font-size: 12px; line-height: 30px; }
+.site_map > li > ul > li > div > ul.on > li > a { color: #ddd; }
+.site_map > li > ul > li > div > ul.on > li > a:hover { color: #0096d6; }
+
+/* footer_company */
+.footer_inner li.footer_company > div { display: flex; justify-content: center; gap: 30px; }
+.footer_inner li.footer_company > div > ul > li { font-family: Harmony_L; font-size: 12px; }
+.footer_inner li.footer_company > div > ul > li > a { display: inline-block; padding: 0 10px; box-sizing: border-box; }
+
+.footer_inner li.footer_company > div > ul div.min_map { position: relative; }
+.footer_inner li.footer_company > div > ul div.min_map > ul { display: none; }
+.footer_inner li.footer_company > div > ul div.min_map > ul.on { display: block; z-index: 20; position: absolute; right: -168px; top: 0; width: 168px; background: #0a246b; }
+.min_map > ul.on > li { font-family: Harmony_L; font-size: 12px; line-height: 30px; }
+.min_map > ul.on > li > a { color: #ddd; }
+.min_map > ul.on > li > a:hover { color: #0096d6; }
+
+/* footer_dl */
+.footer_inner > dl { width: 100%; font-size: 14px;
+margin-top: 30px; display: flex; justify-content: space-between; height: 40px; line-height: 40px; }
+.footer_inner > dl::before { display: block; content: ""; clear: both; 
+   position: absolute; left: 0; top: 368px; width: 100%; height: 40px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; }
+
+.footer_inner > dl > dd { position: relative; width: 128px; height: 30px; margin-top: 5px; line-height: 30px; }
+
+.footer_inner > dl > dd.map_toggle { position: relative; width: 190px; text-indent: -38px; }
+.footer_inner > dl > dd.map_toggle > a::after { display: block; clear: both; content: "";
+   position: absolute; right: 20px; top: 0; width: 30px; height: 30px; background: url(../images/icon_footer_arrow.png) no-repeat 0 0/cover; }
+.footer_inner > dl > dd.map_toggle.on > a::after { background-position-x: -30px; }
+
+/* footer_toggle */
+.footer_inner dd > ul { opacity: 0; visibility: hidden; position: absolute; left: 0; top: -300px; display: flex; flex-direction: column; 
+   width: 190px; text-align: center; text-indent: 0; background: #061641; border: 1px solid white; }
+.footer_inner dd > ul.on { opacity: 1; visibility: visible; }
+/* height 값 각각 지정 */
+.footer_inner dd > ul.jinro_sns { height: 600px; top: -608px; }
+.footer_inner dd > ul.family_site { height: 200px; top: -208px; }
+
+.footer_inner dd > ul > li { flex: 1; line-height: 40px; }
+.footer_inner dd > ul > li:hover { background: #eee; }
+.footer_inner dd > ul > li:hover > a { color: #061641; }
+
+/* address */
+.footer_inner address { padding-top: 50px; font-size: 14px; letter-spacing: 0; line-height: 24px; }
+.footer_inner address span { padding: 0 6px; }
+
+/* copyright */
+.footer_inner > p.copy { font-size: 12px; padding-top: 5px; letter-spacing: 0; }
 }
