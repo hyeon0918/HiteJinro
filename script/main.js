@@ -60,6 +60,25 @@ $('.cBg_inner').on("mousemove", function(e) {
    });
 });
 
+// content2 - swiper
+var swiper = new Swiper(".mySwiper", {
+   effect: "centered",
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: "3",
+   coverflowEffect: {
+     rotate: 0,
+     stretch: 0,
+     depth:50,
+     modifier:15,
+     slideShadows:false,
+   },
+   navigation: {
+     nextEl: '.swiper-button-next',
+     prevEl: '.swiper-button-prev',
+   }
+ });
+ 
 // footer
 // siteMap
 const comMap = document.querySelectorAll(".footer_company > div > ul > li > div.min_map");
@@ -101,4 +120,72 @@ mapToggle.forEach(item => {
       };
    });
 });
+
+// brand ul 해당 챕터만 보여지는 방법
+const group = document.querySelectorAll(".content2_brand>ul>li>a");
+const brandList = document.querySelectorAll(".content2_brand>.swiper>ul>li")
+const beer = document.querySelectorAll(".content2_brand>.swiper>ul>li.beer")
+const soju = document.querySelectorAll(".content2_brand>.swiper>ul>li.soju")
+const wisky = document.querySelectorAll(".content2_brand>.swiper>ul>li.wisky")
+const wine = document.querySelectorAll(".content2_brand>.swiper>ul>li.wine")
+const abroad = document.querySelectorAll(".content2_brand>.swiper>ul>li.abroad")
+const sake = document.querySelectorAll(".content2_brand>.swiper>ul>li.sake")
+const etc = document.querySelectorAll(".content2_brand>.swiper>ul>li.etc")
+
+for(let k=0; k<group.length; k++){
+   group[k].addEventListener("click",e=>{
+      e.preventDefault();
+      group.forEach(item=>{
+         item.classList.remove("on");
+      });
+      e.currentTarget.classList.add("on");
+
+      brandList.forEach(item =>{
+         item.style.display="none";
+      });
+      
+      let className = e.currentTarget.parentElement.getAttribute("class");
+      console.log(className);
+
+      switch(className){
+         case 'all':
+            showList(brandList)
+            break;
+
+         case 'beer':
+            showList(beer)
+            break;
+      
+         case 'soju':
+            showList(soju)
+            break;
+
+         case 'wisky':
+            showList(wisky)
+            break;
+
+         case 'wine':
+            showList(wine)
+            break;
+
+         case 'abroad':
+            showList(abroad)
+            break;
+
+         case 'sake':
+            showList(sake)
+            break;
+
+         case 'etc':
+            showList(etc)
+            break;                            
+      };
+   });
+}
+
+function showList(list){
+   list.forEach(item=>{
+      item.style.display="block"
+   });
+};
 
