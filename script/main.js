@@ -60,44 +60,148 @@ $('.cBg_inner').on("mousemove", function(e) {
    });
 });
 
-// content2 - swiper
-var swiper = new Swiper(".mySwiper", {
-   effect: "centered",
-   grabCursor: true,
-   centeredSlides: true,
-   slidesPerView: "3",
+// content2 - 브랜드 swiper
+var swiper01 = new Swiper(".mySwiper01", {
+   grabCursor: true, //커서가 grab모양
+   centeredSlides: true, //센터모드
+   slidesPerView: "3", //보여질 갯수
+   threshold:100, //마우스 스와이프 민감도
+   loop: false,
+   autoplay:{
+      delay: 2500, //시간설정
+      disableOnInteraction: false, // false-스와이프 후 자동 재생
+   },
    coverflowEffect: {
      rotate: 0,
      stretch: 0,
-     depth:50,
-     modifier:15,
+     depth:200,
      slideShadows:false,
    },
    navigation: {
      nextEl: '.swiper-button-next',
      prevEl: '.swiper-button-prev',
-   }
+   },
+   pagenation: {
+      el: 'pagination01',
+      clickable : true,  // 버튼 클릭 여부
+        type : 'bullets', // 버튼 모양 결정 "bullets", "fraction" 
+        renderBullet : function (index, className) {  // className이 기본값이 들어가게 필수 설정
+            return '<a href="#" class="' + className + '">' + (index + 1) + '</a>'
+        },
+        renderFraction: function (currentClass, totalClass) { // type이 fraction일 때 사용
+            return '<span class="' + currentClass + '"></span>' + '<span class="' + totalClass + '"></span>';
+        }
+   },
  });
  
+ 
+ // brand ul 해당 챕터만 보여지는 방법
+const group = document.querySelectorAll(".content2_brand>ul>li");
+const brandList = document.querySelectorAll(".content2_brand>.swiper>ul>li")
 
-// content3_news - 카드 슬라이드
-var swiper = new Swiper(".mySwiper", {
-   spaceBetween: 10,
-   slidesPerView: 4,
-   freeMode: true,
-   watchSlidesProgress: true,
+for(let k=0; k<group.length; k++){
+   group[k].addEventListener("click",e => {
+      e.preventDefault();
+      let className = e.currentTarget.getAttribute('class');
+      group.forEach(item =>{
+         item.classList.remove("on");
+      })
+      e.currentTarget.classList.add("on");
+      
+      brandList.forEach(item=>{
+         item.style.display ="none"
+      });
+      // className과 같은 클래스를 가진 brandList 요소 보여주기
+      const correspondingBrandList = document.querySelectorAll(`.content2_brand>.swiper>ul>li.${className}`);
+      correspondingBrandList.forEach(item => {
+         item.style.display = "block";
+      });
    });
-var swiper2 = new Swiper(".mySwiper2", {
-   spaceBetween: 10,
-   navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-   },
-   thumbs: {
-      swiper: swiper,
-   },
-});
+}
+// const beer = document.querySelectorAll(".content2_brand>.swiper>ul>li.beer")
+// const soju = document.querySelectorAll(".content2_brand>.swiper>ul>li.soju")
+// const wisky = document.querySelectorAll(".content2_brand>.swiper>ul>li.wisky")
+// const wine = document.querySelectorAll(".content2_brand>.swiper>ul>li.wine")
+// const abroad = document.querySelectorAll(".content2_brand>.swiper>ul>li.abroad")
+// const sake = document.querySelectorAll(".content2_brand>.swiper>ul>li.sake")
+// const etc = document.querySelectorAll(".content2_brand>.swiper>ul>li.etc")
 
+// for(let k=0; k<group.length; k++){
+   //    group[k].addEventListener("click",e=>{
+      //       e.preventDefault();
+      //       group.forEach(item=>{
+         //          item.classList.remove("on");
+         //       });
+         //       e.currentTarget.classList.add("on");
+         
+         //       brandList.forEach(item =>{
+            //          item.style.display="none";
+            //       });
+            
+            //       let className = e.currentTarget.parentElement.getAttribute("class");
+            //       console.log(className);
+            
+            //       switch(className){
+               //          case 'all':
+               //             showList(brandList)
+               //             break;
+               
+               //          case 'beer':
+               //             showList(beer)
+               //             break;
+               
+               //          case 'soju':
+               //             showList(soju)
+               //             break;
+               
+               //          case 'wisky':
+               //             showList(wisky)
+               //             break;
+               
+               //          case 'wine':
+               //             showList(wine)
+               //             break;
+               
+               //          case 'abroad':
+               //             showList(abroad)
+               //             break;
+               
+               //          case 'sake':
+               //             showList(sake)
+               //             break;
+               
+               //          case 'etc':
+               //             showList(etc)
+               //             break;                            
+               //       };
+               //    });
+               // }
+               
+               // function showList(list){
+//    list.forEach(item=>{
+   //       item.style.display="block"
+   //    });
+   // };
+   
+   
+   // content3_news - 카드 슬라이드
+   var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+   });
+   var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      navigation: {
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+         swiper: swiper,
+      },
+   });
+   
 
 // footer
 // siteMap
@@ -140,72 +244,4 @@ mapToggle.forEach(item => {
       };
    });
 });
-
-// brand ul 해당 챕터만 보여지는 방법
-const group = document.querySelectorAll(".content2_brand>ul>li>a");
-const brandList = document.querySelectorAll(".content2_brand>.swiper>ul>li")
-const beer = document.querySelectorAll(".content2_brand>.swiper>ul>li.beer")
-const soju = document.querySelectorAll(".content2_brand>.swiper>ul>li.soju")
-const wisky = document.querySelectorAll(".content2_brand>.swiper>ul>li.wisky")
-const wine = document.querySelectorAll(".content2_brand>.swiper>ul>li.wine")
-const abroad = document.querySelectorAll(".content2_brand>.swiper>ul>li.abroad")
-const sake = document.querySelectorAll(".content2_brand>.swiper>ul>li.sake")
-const etc = document.querySelectorAll(".content2_brand>.swiper>ul>li.etc")
-
-for(let k=0; k<group.length; k++){
-   group[k].addEventListener("click",e=>{
-      e.preventDefault();
-      group.forEach(item=>{
-         item.classList.remove("on");
-      });
-      e.currentTarget.classList.add("on");
-
-      brandList.forEach(item =>{
-         item.style.display="none";
-      });
-      
-      let className = e.currentTarget.parentElement.getAttribute("class");
-      console.log(className);
-
-      switch(className){
-         case 'all':
-            showList(brandList)
-            break;
-
-         case 'beer':
-            showList(beer)
-            break;
-      
-         case 'soju':
-            showList(soju)
-            break;
-
-         case 'wisky':
-            showList(wisky)
-            break;
-
-         case 'wine':
-            showList(wine)
-            break;
-
-         case 'abroad':
-            showList(abroad)
-            break;
-
-         case 'sake':
-            showList(sake)
-            break;
-
-         case 'etc':
-            showList(etc)
-            break;                            
-      };
-   });
-}
-
-function showList(list){
-   list.forEach(item=>{
-      item.style.display="block"
-   });
-};
 

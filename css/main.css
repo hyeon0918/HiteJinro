@@ -172,7 +172,7 @@ div.banner_frame { width: 100%; left: 0; height: 100%; margin: 0 auto; }
 .content3_news > p { width: 100%; font-family: NanumBarunGothic; font-size: 24px;text-align: center; padding-top: 10px; margin-bottom: 80px; }
 
 /* swiper 수정 */
-.swiper { width: 100%; height: 100%; }
+/* .swiper { width: 100%; height: 100%; }
 .swiper-slide { text-align: center; font-size: 18px; background: #fff; display: flex; justify-content: center; align-items: center; }
 .swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
@@ -183,7 +183,7 @@ div.banner_frame { width: 100%; left: 0; height: 100%; margin: 0 auto; }
 .mySwiper img { border-radius: 10px; }
 .mySwiper .swiper-slide { flex: 1; height: 100%; opacity: 0.4; }
 .mySwiper .swiper-slide-thumb-active { opacity: 1; }
-
+ */
 /* 뉴스 내용 */
 .mySwiper2 { position: relative; height: 44%; width: 100%; margin-bottom: 50px; }
 
