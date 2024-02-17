@@ -79,6 +79,26 @@ var swiper = new Swiper(".mySwiper", {
    }
  });
  
+
+// content3_news - 카드 슬라이드
+var swiper = new Swiper(".mySwiper", {
+   spaceBetween: 10,
+   slidesPerView: 4,
+   freeMode: true,
+   watchSlidesProgress: true,
+   });
+var swiper2 = new Swiper(".mySwiper2", {
+   spaceBetween: 10,
+   navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+   },
+   thumbs: {
+      swiper: swiper,
+   },
+});
+
+
 // footer
 // siteMap
 const comMap = document.querySelectorAll(".footer_company > div > ul > li > div.min_map");
