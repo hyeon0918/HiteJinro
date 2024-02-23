@@ -61,12 +61,13 @@ $('.cBg_inner').on("mousemove", function(e) {
 });
 
 // content2 - 브랜드 swiper
-var swiper01 = new Swiper(".mySwiper01", {
+var swiper3 = new Swiper(".mySwiper3", {
    grabCursor: true, //커서가 grab모양
    centeredSlides: true, //센터모드
    slidesPerView: "3", //보여질 갯수
    threshold:100, //마우스 스와이프 민감도
-   loop: false,
+   initialSlide: 1, // 중간 슬라이드부터 시작
+   
    autoplay:{
       delay: 2500, //시간설정
       disableOnInteraction: false, // false-스와이프 후 자동 재생
@@ -74,134 +75,55 @@ var swiper01 = new Swiper(".mySwiper01", {
    coverflowEffect: {
      rotate: 0,
      stretch: 0,
-     depth:200,
+     depth:250,
      slideShadows:false,
    },
    navigation: {
      nextEl: '.swiper-button-next',
      prevEl: '.swiper-button-prev',
    },
-   pagenation: {
-      el: 'pagination01',
+   pagination: {
+      el: '.swiper-pagination',
       clickable : true,  // 버튼 클릭 여부
-        type : 'bullets', // 버튼 모양 결정 "bullets", "fraction" 
-        renderBullet : function (index, className) {  // className이 기본값이 들어가게 필수 설정
-            return '<a href="#" class="' + className + '">' + (index + 1) + '</a>'
-        },
-        renderFraction: function (currentClass, totalClass) { // type이 fraction일 때 사용
-            return '<span class="' + currentClass + '"></span>' + '<span class="' + totalClass + '"></span>';
-        }
    },
- });
+});
  
- 
- // brand ul 해당 챕터만 보여지는 방법
-const group = document.querySelectorAll(".content2_brand>ul>li");
-const brandList = document.querySelectorAll(".content2_brand>.swiper>ul>li")
+//  brand ul 해당 챕터만 보여지는 방법
+  $(".content2_brand .swiper").hide(); // 첫번째 빼고 나머지 전부 안보여지게 설정
+  $(".all").show();
 
-for(let k=0; k<group.length; k++){
-   group[k].addEventListener("click",e => {
-      e.preventDefault();
-      let className = e.currentTarget.getAttribute('class');
-      group.forEach(item =>{
-         item.classList.remove("on");
-      })
-      e.currentTarget.classList.add("on");
-      
-      brandList.forEach(item=>{
-         item.style.display ="none"
-      });
-      // className과 같은 클래스를 가진 brandList 요소 보여주기
-      const correspondingBrandList = document.querySelectorAll(`.content2_brand>.swiper>ul>li.${className}`);
-      correspondingBrandList.forEach(item => {
-         item.style.display = "block";
-      });
-   });
-}
-// const beer = document.querySelectorAll(".content2_brand>.swiper>ul>li.beer")
-// const soju = document.querySelectorAll(".content2_brand>.swiper>ul>li.soju")
-// const wisky = document.querySelectorAll(".content2_brand>.swiper>ul>li.wisky")
-// const wine = document.querySelectorAll(".content2_brand>.swiper>ul>li.wine")
-// const abroad = document.querySelectorAll(".content2_brand>.swiper>ul>li.abroad")
-// const sake = document.querySelectorAll(".content2_brand>.swiper>ul>li.sake")
-// const etc = document.querySelectorAll(".content2_brand>.swiper>ul>li.etc")
+  // 탭메뉴 클릭 시, 클릭한 메뉴와 같은 클래스의 swiper보여주기
+  $(".brand_list li").click(function(event){
+      event.preventDefault();
+      // Remove active class from all tabs
+      $(".brand_list li a").removeClass("on");
+      // Add active class to the clicked tab
+      $(this).find("a").addClass("on");
+      // Hide all sliders
+      $(".content2_brand .swiper").hide();
+      var className = $(this).attr("class");
+      $("." + className).show();
+      // Update swiper
+      swiper3.update();
+  });
+  
+  
+// content3_news - 카드 슬라이드
+var swiperNewList = new Swiper(".mySwiper", {
+   spaceBetween: 50,
+   slidesPerView: 4,
+   freeMode: true,
+   watchSlidesProgress: true,
+});
 
-// for(let k=0; k<group.length; k++){
-   //    group[k].addEventListener("click",e=>{
-      //       e.preventDefault();
-      //       group.forEach(item=>{
-         //          item.classList.remove("on");
-         //       });
-         //       e.currentTarget.classList.add("on");
-         
-         //       brandList.forEach(item =>{
-            //          item.style.display="none";
-            //       });
-            
-            //       let className = e.currentTarget.parentElement.getAttribute("class");
-            //       console.log(className);
-            
-            //       switch(className){
-               //          case 'all':
-               //             showList(brandList)
-               //             break;
-               
-               //          case 'beer':
-               //             showList(beer)
-               //             break;
-               
-               //          case 'soju':
-               //             showList(soju)
-               //             break;
-               
-               //          case 'wisky':
-               //             showList(wisky)
-               //             break;
-               
-               //          case 'wine':
-               //             showList(wine)
-               //             break;
-               
-               //          case 'abroad':
-               //             showList(abroad)
-               //             break;
-               
-               //          case 'sake':
-               //             showList(sake)
-               //             break;
-               
-               //          case 'etc':
-               //             showList(etc)
-               //             break;                            
-               //       };
-               //    });
-               // }
-               
-               // function showList(list){
-//    list.forEach(item=>{
-   //       item.style.display="block"
-   //    });
-   // };
-   
-   
-   // content3_news - 카드 슬라이드
-   var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 10,
-      slidesPerView: 4,
-      freeMode: true,
-      watchSlidesProgress: true,
-   });
-   var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 10,
-      navigation: {
-         nextEl: ".swiper-button-next",
-         prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-         swiper: swiper,
-      },
-   });
-   
+var swiperNews = new Swiper(".mySwiper2", {
+   spaceBetween: 10,
+
+   thumbs: {
+      swiper: swiperNewList,
+   },
+});
+
 
 // footer
 // siteMap

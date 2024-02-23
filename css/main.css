@@ -5,8 +5,7 @@ body { background: #fff;color: #061641; font-size: 16px; font-family:'Harmony_L'
 a { color: #061641; text-decoration: none; }
 
 /* PC화면 1025 ~ 최대px */
-@media screen and ( min-width: 1025px ) {
-
+@media screen and ( min-width: 1025px ){
 /* layout */
 #header { z-index: 40; position: absolute; width: 100%; height: 120px; }
 
@@ -22,9 +21,12 @@ section.banner { z-index: 30; position: relative; width: 100%; height: 50vw; bac
    .content1_company {width:100%;height:1330px;}
       .company_inner {width:1210px;height:100%;padding-top:130px;box-sizing:border-box;margin:0 auto;}
    .content2_brand{width:100%;height:1320px;background:url(../images/brand_wave.png)no-repeat 0 0/cover;background-position-y:-275px;}
+   .content3_news { position: relative; width: 1328px; height: 1100px; margin: 0 auto; }
+   .content4_social { width: 1328px; height: 760px; margin: 0 auto; }
+   .content5_notice { width: 1328px; height: 380px; margin: 0 auto; padding: 120px 0; }
 
 #footer { position: relative; width: 100%;; height: 540px; background: #061641; color: #fff; text-align: center; letter-spacing: 1px; }
-   .footer_inner { width: 1328px; margin: 0 auto; padding-top: 40px; /* border: 1px solid white;  */ }
+   .footer_inner { width: 1328px; margin: 0 auto; padding-top: 40px; }
 
 /* header */
 h1.logo { position: absolute; left: 0; top: 54px; }
@@ -155,46 +157,43 @@ div.banner_frame { width: 100%; left: 0; height: 100%; margin: 0 auto; }
 .content2_brand>ul>li>a{display:block;font-size:20px;font-family:"NanumBarunGothic";color:#153E8E;font-weight:500;}
 .content2_brand>ul>li:hover>a, .content2_brand>ul>li>a.on{text-decoration:underline;font-weight:600;}
 
-.content2_brand>.swiper{overflow:hidden;width:1325px;height:490px;padding-bottom:15px;}
-.content2_brand>.swiper>ul.swiper-wrapper{padding:50px 0;}
-.content2_brand>.swiper>ul.swiper-wrapper>li{position:relative;width:280px;height:360px;margin:0 auto;}
-.content2_brand>.swiper>ul.swiper-wrapper>li>a{display:block;width:280px;height:100%;text-align:center;padding-top:40px;border-radius:40px;box-shadow:0 2px 10px 5px #ddd;margin:0 auto;transition:transform 0.3s linear 0s;box-sizing:border-box;}
-.content2_brand>.swiper>ul.swiper-wrapper>li>a>img{height:90%;transition:height 0.5s linear 0s;}
-.content2_brand>.swiper>ul.swiper-wrapper>li>div{opacity:0;position:absolute;transform:translateY(-50px);left:60px; width:320px; height:120px; background:#fff;padding:15px 5px 0;border-radius:0 0 40px 40px;box-shadow:0 2px 10px 5px #B1DCF9;margin:0 auto;text-align:center;box-sizing:border-box;transition:opacity 0.2s linear 0s,transform 0.5s linear 0s;}
-.content2_brand>.swiper>ul.swiper-wrapper>li.swiper-slide-active>a{padding-top:10px;box-shadow:0 2px 10px 5px #B1DCF9;background:#B1DCF9;transform:scale(1.15);}
-.content2_brand>.swiper>ul.swiper-wrapper>li.swiper-slide-active>a>img{height:70%;}
-.content2_brand>.swiper>ul.swiper-wrapper>li.swiper-slide-active>div{opacity:1;transform:translateY(-80px);z-index:10; }
+.content2_brand .swiper{overflow:hidden;width:1325px;height:490px;padding-bottom:15px;}
+.content2_brand .swiper>ul.swiper-wrapper{padding:50px 0;}
+.content2_brand .swiper>ul.swiper-wrapper>li{position:relative;width:280px;height:360px;margin:0 auto;}
+.content2_brand .swiper>ul.swiper-wrapper>li>a{display:block;width:280px;height:100%;text-align:center;padding-top:40px;border-radius:40px;box-shadow:0 2px 10px 5px #ddd;margin:0 auto;transition:transform 0.3s linear 0s;box-sizing:border-box;}
+.content2_brand .swiper>ul.swiper-wrapper>li>a>img{height:90%;transition:height 0.5s linear 0s;}
+.content2_brand .swiper>ul.swiper-wrapper>li>div{opacity:0;position:absolute;transform:translateY(-50px);left:60px; width:320px; height:120px; background:#fff;padding:15px 5px 0;border-radius:0 0 40px 40px;box-shadow:0 2px 10px 5px #B1DCF9;margin:0 auto;text-align:center;box-sizing:border-box;transition:opacity 0.2s linear 0s,transform 0.5s linear 0s;}
+.content2_brand .swiper>ul.swiper-wrapper>li.swiper-slide-active>a{padding-top:10px;box-shadow:0 2px 10px 5px #B1DCF9;background:#B1DCF9;transform:scale(1.15);}
+.content2_brand .swiper>ul.swiper-wrapper>li.swiper-slide-active>a>img{height:70%;}
+.content2_brand .swiper>ul.swiper-wrapper>li.swiper-slide-active>div{opacity:1;transform:translateY(-80px);z-index:10; }
 
-.content2_brand>.swiper>.swiper-pagination{bottom:0;}
-.content2_brand>.swiper>.swiper-pagination:root{--swiper-theme-color:#061641;}
+.content2_brand .swiper-pagination, .content2_brand .swiper-button-prev, .content2_brand .swiper-button-next{--swiper-theme-color:#061641;}
+
 /* content3_news */
 .content3_news > h2 { width: 100%; text-align: center; font-family: Harmony_M; font-size: 75px; margin-top: 80px; }
 .content3_news > p { width: 100%; font-family: NanumBarunGothic; font-size: 24px;text-align: center; padding-top: 10px; margin-bottom: 80px; }
 
-/* swiper 수정 */
-/* .swiper { width: 100%; height: 100%; }
-.swiper-slide { text-align: center; font-size: 18px; background: #fff; display: flex; justify-content: center; align-items: center; }
-.swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.content3_news .swiper { width: 100%; height: 300px; margin-left: auto; margin-right: auto; }
+.content3_news .swiper-slide { text-align: center; font-size: 18px; background: #fff; display: flex; justify-content: center; align-items: center; 
+   background-size: cover; background-position: center; }
+.content3_news .swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-.swiper { width: 100%; height: 300px; margin-left: auto; margin-right: auto; }
-.swiper-slide { background-size: cover; background-position: center; }
+.content3_news .mySwiper { height: 12%; box-sizing: border-box; padding: 10px 0; }
+.content3_news .mySwiper img { border-radius: 10px; }
+.content3_news .mySwiper .swiper-slide { flex: 1; height: 100%; opacity: 0.4; }
+.content3_news .mySwiper .swiper-slide-thumb-active { opacity: 1; }
 
-.mySwiper { height: 12%; box-sizing: border-box; padding: 10px 0; }
-.mySwiper img { border-radius: 10px; }
-.mySwiper .swiper-slide { flex: 1; height: 100%; opacity: 0.4; }
-.mySwiper .swiper-slide-thumb-active { opacity: 1; }
- */
-/* 뉴스 내용 */
-.mySwiper2 { position: relative; height: 44%; width: 100%; margin-bottom: 50px; }
+/* 뉴스 메인 내용 */
+.content3_news .mySwiper2 { position: relative; height: 44%; width: 100%; margin-bottom: 50px; }
 
-.mySwiper2 img { margin-left: 60px; width: 44%; border-radius: 10px; object-fit: cover; }
-.mySwiper2 .news_text { position: absolute; right: 60px; top: 0; width: 46%; }
-.news_text > h3 { width: 100%; text-align: center; font-family: Harmony_M; font-size: 34px; line-height: 60px; padding-top: 20px; }
+.content3_news .mySwiper2 img { position: absolute; left: 46px; width: 44%; border-radius: 10px; object-fit: cover; }
+.content3_news .mySwiper2 .news_text { position: absolute; right: 60px; top: 0; width: 46%; }
+.content3_news .news_text > h3 { width: 100%; text-align: center; font-family: Harmony_M; font-size: 34px; line-height: 60px; padding-top: 20px; }
 
-.news_text > ul { width: 100%; text-align: center; padding-top: 20px; display: flex; flex-direction: column; gap: 10px; font-family: 나눔바른고딕; font-size: 20px;}
-.news_text > ul > li:last-child { padding-top: 20px; line-height: 30px; text-align: left; }
+.content3_news .news_text > ul { width: 100%; text-align: center; padding-top: 20px; display: flex; flex-direction: column; gap: 10px; font-family: 나눔바른고딕; font-size: 20px;}
+.content3_news .news_text > ul > li:last-child { padding-top: 20px; line-height: 30px; text-align: left; }
 
-.news_text > p { width: 100%; text-align: right; margin-top: 30px; font-family: 나눔바른고딕; font-size: 18px; }
+.content3_news .news_text > p { width: 100%; text-align: right; margin-top: 30px; font-family: 나눔바른고딕; font-size: 18px; }
 
 /* content4_social */
 .content4_social > h2 { width: 100%; text-align: center; font-family: Harmony_M; font-size: 75px; margin-top: 60px; }
@@ -203,6 +202,7 @@ div.banner_frame { width: 100%; left: 0; height: 100%; margin: 0 auto; }
 .content4_social > .social_inner { width: 100%; display: flex; gap: 10px; }
 .social_inner > div { flex: 1; }
 .social_inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+
 /* social_left */
 .social_inner .social_left { width: 420px; height: 420px; }
 /* social_mid */
@@ -284,4 +284,5 @@ margin-top: 30px; display: flex; justify-content: space-between; height: 40px; l
 
 /* copyright */
 .footer_inner > p.copy { font-size: 12px; padding-top: 5px; letter-spacing: 0; }
+
 }
