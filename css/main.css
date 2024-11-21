@@ -4,8 +4,25 @@
 body { background: #fff;color: #061641; font-size: 16px; font-family:'Harmony_L','Harmony_M','Harmony_B','NanumBarunGothic', "나눔바른고딕", "나눔고딕", 'NanumGothic', sans-serif; }
 a { color: #061641; text-decoration: none; }
 
+/* 모바일화면 0~ 768*/
+@media screen and (max-width:768px){
+
+}
+
+/* 테블릿화면 769~1024 */
+@media screen and (min-width: 769px) and (max-width:1024px){
+
+}
+
 /* PC화면 1025 ~ 최대px */
 @media screen and ( min-width: 1025px ){
+/* 모바일 */
+   /* 햄버거버튼 */
+   div.mobBtn{display: none;}
+
+   /* 전체메뉴 */
+   div.mob{display:none;}
+
 /* layout */
 #header { z-index: 40; position: absolute; width: 100%; height: 120px; }
 
